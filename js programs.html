@@ -1,0 +1,234 @@
+<html>
+<head>
+<title> Add two numbers </title>
+<script>
+
+//Fibionce Series
+
+function fib(){
+    var a=0;
+    var b=1;
+    var n = document.getElementById('fibInput').value;
+    var c=2;
+
+    let answer = " "+a+" "+b;
+  
+    while(c<n)
+     {
+   
+     var t=a+b;  // t is temp variable holding adding value of a and b
+     a=b;
+     b=t;
+     answer += " "+t;
+     c++;
+    }
+
+   document.getElementById("Fib").value = answer; 
+
+}
+
+// Palindrome
+    function Palindrome() {
+       let revstring = "";
+       const a = document.getElementById("Palindrome").value;
+        const i = a.length;
+        for (j = i; j >= 0; j--) {
+            revstring = revstring + a.charAt(j);
+        }
+            if(a === revstring){
+                alert('This is palindrome');
+            }
+            else {
+                alert('This is not palindrome');
+            }
+    }
+
+
+
+
+//reverse number
+/*
+function num11() {
+    function reverse_number(n) {
+        console.log('reverse_number');
+        n = n + "";
+        return n.split("").reverse().join("");
+    }
+    const d = document.getElementById("nuum1").value;
+    document.getElementById("nuum2").value = reverse_number(d)
+}*/
+
+function num11() {
+    const d = document.getElementById("nuum1").value;
+    const n = d + "";
+    document.getElementById("nuum2").value = n.split("").reverse().join("");
+}
+
+
+//reverse string
+
+function str1() {
+    function str1_reverse(str) {
+        return str.split(" ").reverse().join(" ");
+    }
+    const a = document.getElementById("str1").value;
+    document.getElementById("str2").value = str1_reverse(a)
+}
+    //url 
+
+    function urlfinder(){
+        alert(document.URL);
+    }
+    //MulDiv 
+
+    function mulfn() {
+        var a = document.getElementById("Firstnum").value;
+        var b = document.getElementById("Scondnum").value;
+        var c = a*b;
+        document.getElementById("Ansmd").value=c;
+    }
+
+    function divfn() {
+        var a = document.getElementById("Firstnum").value;
+        var b = document.getElementById("Scondnum").value;
+        var c = a/b;
+        document.getElementById("Ansmd").value=c;
+    }
+
+// Print function
+
+function prntfn() {
+    window.print();
+
+}
+
+
+
+    // Hellow Function 
+    function hellow(){
+        alert('Hellow World');
+    }
+    // even odd Function
+    function weofun() {
+        const num = Number(document.getElementById("numbr").value);
+
+        if (num%2==0) {
+            alert("Even Number");
+        }
+        else {
+            alert("Odd Number");
+        }
+    }
+
+    //  SWAP FUNCTION 
+    function swap(){
+        var a = Number(document.getElementById("valueofA").value);
+        var b = Number(document.getElementById("valueofB").value);
+        var c;
+
+        c=a;
+        a=b;
+        b=c;
+       
+    document.getElementById("swapA").value=a;
+    document.getElementById("swapB").value=b;
+
+    }
+
+    //ADD FUNCTION
+function add(){
+
+const a = Number(document.getElementById("first").value);
+const b = Number(document.getElementById("second").value);
+const c=a+b;
+document.getElementById("answer").value=c;
+}
+
+//Factorial Function 
+
+function fac() {
+
+    let i, fact=1, no;
+
+    no=document.getElementById("num1").value;
+
+    for(i=1;i<=no;i++){
+        fact=fact*i;
+    }
+     document.getElementById("factans").value = fact;
+}
+
+
+</script>
+
+</head>
+<body>
+    
+  <!--ADD PROGRAM --> 
+
+Enter First Number: <input id="first" />
+Enter Second Number: <input id="second" />
+<button onclick="add()"> Add</button> 
+
+Answer:<input id="answer" /> 
+<hr></hr>
+
+
+<!--SWAP PROGRAM --> 
+
+Value of A: <input id="valueofA" /><br> </br>
+Value of B: <input id="valueofB" /><br> </br>
+<button onclick="swap()"> swap</button> <br> </br>
+Swap Value of A is :<input id="swapA" /><br> </br>
+Swap Value of B is :<input id="swapB" /><br> </br>
+
+<hr></hr>
+
+
+<!--HELLOW WORLD PROGRAM --> 
+
+This is Hellow Text ALERT .
+
+<button onclick="hellow()">Click me</button>
+<hr></HR>
+<!-- EVEN ODD PROGRAM --> 
+ENTER A NUMBER: <input id="numbr" />
+<button onclick="weofun()">Find Number</button>
+<hr></hr>
+    Enter a Number: <input id="num1" />
+    <button onclick="fac()">Factorial</button>
+    Factorial of a Number is: <input id="factans" />
+<hr></hr>
+
+Click the button to print the current page.
+<button onclick="prntfn()">Click for Print current Page</button>
+<hr></hr>
+Enter First Number: <input id="Firstnum"/>
+Enter Second Number: <input id="Scondnum" />
+Answer: <input id="Ansmd"/>
+</br>
+
+<button onclick="mulfn()">Multiply</button>
+<button onclick="divfn()">Divide</button>
+
+<hr></hr>
+<button onclick ="urlfinder()">click for URL Finder</button>
+
+<hr></hr>
+Enter String: <input id="str1"/> 
+<button onclick="str1()">Reverse String</button>
+Reverse String: <input id="str2"/> 
+<hr></hr>
+Enter Number: <input id="nuum1"/> 
+<button onclick="num11()">Reverse Number</button>
+Reverse String: <input id="nuum2"/> 
+<hr></hr>
+Enter String for palindrome: <input id="Palindrome"/>
+<button onclick="Palindrome()">Check</button>
+<hr></hr>
+<button onclick="fib()">Click Here for Fibionce</button>
+<input id="fibInput" placeholder="Input number" />
+<input id="Fib" placeholder="Output" />
+</html>
+
+
